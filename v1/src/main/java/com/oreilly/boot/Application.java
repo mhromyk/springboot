@@ -1,3 +1,5 @@
+package com.oreilly.boot;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -21,9 +23,17 @@ public class Application {
     @Autowired
     private String message;
 
+    @Autowired
+    private MyRandomMessage myRandomMessage;
+
+//    @RequestMapping("/")
+//    public String home(){
+//        return "Welcome to "+name+" "+message;
+//    }
+
     @RequestMapping("/")
-    public String home(){
-        return "Welcome to "+name+" "+message;
+    public String welcome(){
+        return "Welcome, your lucky number is: "+myRandomMessage.getMyRandomMessage();
     }
 
     public static void main(String[] args){

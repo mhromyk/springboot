@@ -4,3 +4,11 @@ server:
 
 type: Framework
 name: Spring Boot ${type}
+
+
+my:
+  randomMessage: ${random.int}
+
+spring:
+  profiles:
+    active: DEV
